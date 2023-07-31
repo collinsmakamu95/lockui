@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lockui/widgets/input_mode_button.dart';
+import 'package:lockui/widgets/passcode/passcode_input.dart';
 
 const _padding = 16.0;
 
@@ -33,7 +34,9 @@ class _PasscodeIputViewState extends State<PasscodeIputView> {
                     ),
               ),
               const SizedBox(height: 32.0),
-              const Expanded(child: Placeholder()),
+              const Expanded(
+                child: PasscodeInput(),
+              ),
               Align(
                 alignment: Alignment.centerRight,
                 child: InputModeButton(
