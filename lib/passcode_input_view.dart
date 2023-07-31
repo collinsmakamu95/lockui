@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lockui/widgets/input_mode_button.dart';
 import 'package:lockui/widgets/passcode/passcode_input.dart';
+import 'package:lockui/widgets/rotary_dial/rotary_dial_input.dart';
 
 const _padding = 16.0;
 
@@ -16,6 +17,8 @@ class PasscodeIputView extends StatefulWidget {
 }
 
 class _PasscodeIputViewState extends State<PasscodeIputView> {
+  var _simpleInputMode = false;
+  void _onModeChanged() => setState(() => _simpleInputMode = !_simpleInputMode);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,14 +37,16 @@ class _PasscodeIputViewState extends State<PasscodeIputView> {
                     ),
               ),
               const SizedBox(height: 32.0),
-              const Expanded(
-                child: PasscodeInput(),
+              Expanded(
+                child: _simpleInputMode
+                    ? const PasscodeInput()
+                    : const RotaryDialInput(),
               ),
               Align(
                 alignment: Alignment.centerRight,
                 child: InputModeButton(
-                  simpleInputMode: true,
-                  onModeChanged: () {},
+                  simpleInputMode: _simpleInputMode,
+                  onModeChanged: _onModeChanged,
                 ),
               ),
             ],

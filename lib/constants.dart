@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 abstract class Constants {
   static const inputValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
@@ -7,4 +9,8 @@ abstract class Constants {
   static const dialNumberPadding = 8.0;
   static const dialNumberRadius =
       rotaryRingWidth / 2 - (rotaryRingPadding + dialNumberPadding);
+  static const firstDialNumberPosition = math.pi / 3;
+
+  static const maxRotaryAngle = math.pi * 7 / 4;
+  static const maxRotarySweepingAngle = math.pi * 2 / 3;
 }
