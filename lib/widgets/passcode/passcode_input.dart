@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lockui/constants.dart';
+import 'package:lockui/widgets/dial_number.dart';
 
 const _alignment = MainAxisAlignment.spaceEvenly;
 
@@ -15,10 +16,10 @@ class PasscodeInput extends StatelessWidget {
             mainAxisAlignment: _alignment,
             children: [
               for (var j = 0; j < 3; j++)
-                Text(Constants.inputValues[i * 3 + j].toString()),
+                DialNumber(Constants.inputValues[i * 3 + j]),
             ],
           ),
-        Text(Constants.inputValues.last.toString()),
+        DialNumber(Constants.inputValues.last),
       ],
     );
   }
