@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lockui/widgets/input_mode_button.dart';
+import 'package:lockui/widgets/passcode/passcode_digits.dart';
 import 'package:lockui/widgets/passcode/passcode_input.dart';
 import 'package:lockui/widgets/rotary_dial/rotary_dial_input.dart';
 
@@ -17,7 +18,22 @@ class PasscodeIputView extends StatefulWidget {
 }
 
 class _PasscodeIputViewState extends State<PasscodeIputView> {
+  late final List<PasscodeDigit> _passcodeDigitvalues;
   var _simpleInputMode = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _passcodeDigitvalues = List.generate(
+      widget.expectedCode.length,
+      (index) => const PasscodeDigit(
+        backgroundColor: Colors.white,
+        fontColor: Colors.white,
+      ),
+      growable: false,
+    );
+  }
+
   void _onModeChanged() => setState(() => _simpleInputMode = !_simpleInputMode);
   @override
   Widget build(BuildContext context) {
@@ -37,6 +53,14 @@ class _PasscodeIputViewState extends State<PasscodeIputView> {
                     ),
               ),
               const SizedBox(height: 32.0),
+              Align(
+                alignment:
+                    _simpleInputMode ? Alignment.center : Alignment.centerRight,
+                child: PasscodeDigits(
+                  passcodeDigitValues: _passcodeDigitvalues,
+                  simpleInputMode: _simpleInputMode,
+                ),
+              ),
               Expanded(
                 child: _simpleInputMode
                     ? const PasscodeInput()
