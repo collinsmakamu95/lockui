@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.kanitTextTheme(),
         useMaterial3: true,
       ),
-      home: const PasscodeIputView(
+      home: const PasscodeInputView(
         expectedCode: '9221',
       ),
     );

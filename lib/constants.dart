@@ -12,5 +12,5 @@ abstract class Constants {
   static const firstDialNumberPosition = math.pi / 3;
 
   static const maxRotaryAngle = math.pi * 7 / 4;
-  static const maxRotarySweepingAngle = math.pi * 2 / 3;
+  static const maxRotarySweepingAngle = math.pi / 2 * 3;
 }

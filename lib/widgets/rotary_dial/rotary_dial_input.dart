@@ -33,7 +33,7 @@ class RotaryDialInput extends StatelessWidget {
                   (i + 1) * -math.pi / 6,
                   dialNumberDistanceFromCenter,
                 ),
-                child: DialNumber(inputValues[i]),
+                child: DialNumber( inputValues[i]),
               ),
             CustomPaint(
               size: size,

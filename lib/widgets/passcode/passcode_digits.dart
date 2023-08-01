@@ -8,8 +8,11 @@ const _passcodeDigitGapBig = 16.0;
 const _passcodeDigitGapSmall = 4.0;
 
 class PasscodeDigit {
-  const PasscodeDigit(
-      {required this.backgroundColor, required this.fontColor, this.value});
+  const PasscodeDigit({
+    required this.backgroundColor,
+    required this.fontColor,
+    this.value
+  });
 
   final Color backgroundColor;
   final Color fontColor;
@@ -17,10 +20,11 @@ class PasscodeDigit {
 }
 
 class PasscodeDigits extends StatelessWidget {
-  const PasscodeDigits(
-      {required this.passcodeDigitValues,
+  const PasscodeDigits({
+      required this.passcodeDigitValues,
       required this.simpleInputMode,
-      super.key});
+      super.key,
+  });
 
   final List<PasscodeDigit> passcodeDigitValues;
   final bool simpleInputMode;
@@ -31,7 +35,7 @@ class PasscodeDigits extends StatelessWidget {
       height: _passcodeDigitSizeBig,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
+        children: <Widget>[
           for (var i = 0; i < passcodeDigitValues.length; i++)
             Container(
               height: _passcodeDigitSizeBig,
@@ -43,7 +47,7 @@ class PasscodeDigits extends StatelessWidget {
           SizedBox(
             width:
                 simpleInputMode ? _passcodeDigitGapBig : _passcodeDigitGapSmall,
-          ) as Container,
+          ),
         ),
       ),
     );

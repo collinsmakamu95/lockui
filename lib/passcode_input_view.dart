@@ -6,18 +6,18 @@ import 'package:lockui/widgets/rotary_dial/rotary_dial_input.dart';
 
 const _padding = 16.0;
 
-class PasscodeIputView extends StatefulWidget {
-  const PasscodeIputView({
+class PasscodeInputView extends StatefulWidget {
+  const PasscodeInputView({
     required this.expectedCode,
     super.key,
   });
   final String expectedCode;
 
   @override
-  State<PasscodeIputView> createState() => _PasscodeIputViewState();
+  State<PasscodeInputView> createState() => _PasscodeInputViewState();
 }
 
-class _PasscodeIputViewState extends State<PasscodeIputView> {
+class _PasscodeInputViewState extends State<PasscodeInputView> {
   late final List<PasscodeDigit> _passcodeDigitvalues;
   var _simpleInputMode = false;
 

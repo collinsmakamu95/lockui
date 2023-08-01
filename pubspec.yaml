@@ -18,6 +18,10 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
+  local_hero:
+    git:
+      url: https://github.com/mkobuolys/local_hero.git
+      ref: mark-needs-paint-error-fix
 
 
 dev_dependencies:
