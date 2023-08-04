@@ -1,6 +1,6 @@
 # lockui
 
-A new Flutter project.
+A flutter challenge from dribble. Inspired by old rotary phones 
 
 ## Getting Started
 
